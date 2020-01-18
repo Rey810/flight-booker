@@ -1,0 +1,7 @@
+<h1>Flights#index</h1>
+<%= render 'search_form' %>
+<% unless @flight_results.nil? || @flight_results.empty? %>
+    <%= render 'search_results' %>
+<% end %>
+
+

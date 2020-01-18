@@ -1,0 +1,23 @@
+<%= form_tag :new_booking, method: :get, id: "new_booking_form" do |form| %>
+
+    <% @flight_results.each do |f| %>
+
+        <div class='flight'>
+            <h3>Flight <%= f.id %></h3>
+                <h4>From: <span><%= f.from_airport.city %></span></h4>
+
+                <h4>To: <span><%= f.to_airport.city %></span></h4>
+
+                <h4>Departure Time: <span><%= f.depart_at.strftime('%H:%M.%S') %></span></h4>
+
+                <%= radio_button_tag :flight_id, f.id %>
+        </div>
+
+    <% end %>  
+    <%= hidden_field_tag :num_of_passengers, params[:passengers] %>
+    <input type="submit" value="Proceed with booking">
+
+<% end %>
+
+
+

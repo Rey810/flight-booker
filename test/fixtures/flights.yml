@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from_id: 1
+  start: 
+  flight_duration: MyString
+  to_id: 1
+
+two:
+  from_id: 1
+  start: 
+  flight_duration: MyString
+  to_id: 1
