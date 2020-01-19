@@ -1,13 +1,13 @@
 <%= form_for(Flight.new, :url => root_path, method: :get) do |f| %>
     <%= f.label :from_id, "From:" %>
-    <%= select_tag(:from_id, options_for_select(@airport_options)) %>
+    <%= select_tag(:from_id, options_for_select(@airport_options), {:class=> 'select-css'}) %>
 
     
     <%= f.label :to_id, "To:" %>
-    <%= select_tag(:to_id, options_for_select(@airport_options)) %>
+    <%= select_tag(:to_id, options_for_select(@airport_options), {:class=> 'select-css'}) %>
     
     <%= f.label :passengers, "Passengers" %>
-    <%= select_tag(:passengers, options_for_select(1..4)) %>
+    <%= select_tag(:passengers, options_for_select(1..4), {:class=> 'select-css'}) %>
     
     <%= f.submit "Submit" %>
 <% end %>

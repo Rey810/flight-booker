@@ -1,0 +1,29 @@
+ <%= form_with(model: @booking) do |booking_form| %>
+    <%= hidden_field_tag :flight_id, @flight.id %>
+
+    <div class='booking-details'>
+        <h2>Flight Details for Flight <%= @flight.id %>
+        <h4>Departure Date:<%= @flight.depart_at.strftime("%e %b %Y") %></h4>
+        <h4>Departing from <%= @flight.from_airport.city %></h4>
+        <h4>Landing in <%= @flight.to_airport.city %></h4>
+    </div>
+
+        <section class='passenger-container'>
+            <h2>Passenger Information</h2>
+                <%= booking_form.fields_for :passengers do |passenger_form| %>
+                    <div class='passenger'>
+                        <span class='name'> 
+                            <%= passenger_form.label :name %>
+                            <%= passenger_form.text_field :name %>
+                        </span>
+                        <span class='email'>
+                            <%= passenger_form.label :email %>
+                            <%= passenger_form.email_field :email %>
+                        </span>
+                    </div>
+                <% end %>
+        </section>
+    <%= submit_tag("Book Flight") %>
+<% end %>
+
+

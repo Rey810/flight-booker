@@ -1,0 +1,16 @@
+<h1>You're off!<h1>
+<h2>Congrats, your flight has been successfully booked.</h2>
+<h4>Flight Details:</h4>
+    <%= @booking.flight.depart_at.strftime("%e %B %Y") %>
+<h4>Passenger Details: </h4>
+<% @booking.passengers.each do |passenger| %>
+    <div class='passenger'>
+        <%= passenger.name %>
+    </div>
+<% end %>
+<h4 class='airport'>
+    Departing from: <%= @booking.flight.to_airport.city %>
+</h4>
+<h4 class='airport'>
+    Landing in: <%= @booking.flight.from_airport.city %>
+</h4>
