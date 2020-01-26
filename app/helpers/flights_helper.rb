@@ -13,4 +13,12 @@ module FlightsHelper
         Flight.all.where('to_id = ? and from_id = ?', to, from)
     end 
 
+    def search_results
+        if params[:commit]
+            @to_id = params[:to_id]
+            @from_id = params[:from_id]
+            @passengers = params[:passengers]
+            @flight_results = available_flights(@to_id, @from_id)
+        end
+    end
 end

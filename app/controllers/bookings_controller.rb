@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
         @booking.flight_id = params[:flight_id]
 
         if @booking.save
+            @booking.passengers.each { |p| PassengerMailer.thank_you(p).deliver_now }
             redirect_to @booking
         else
             render 'new'
