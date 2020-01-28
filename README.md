@@ -8,6 +8,8 @@
     1. Enter desired dates / airports and click “Search”
     1. Choose from among a list of eligible flights
     1. Enter passenger information for all passengers
+    1. Display 'booking success' page and send out confirmation email to each passenger
+
 * Practice:
     1. Populating and building advanced Rails forms:
         * Dropdown menus
