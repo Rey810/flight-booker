@@ -15,6 +15,7 @@
         * Dropdown menus
         * Radio buttons
         * Nested Submissions
+    1. Mailer Functionality
 
 
 
